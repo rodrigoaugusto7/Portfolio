@@ -1,0 +1,7 @@
+numpy
+ipywidgets
+nbinteract
+pandas==0.24.2
+seaborn==0.9.0
+squarify==0.4.2
+matplotlib==3.1.1
