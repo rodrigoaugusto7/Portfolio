@@ -13219,10 +13219,10 @@ div#notebook {
 
 
 
-<div id="9703c26b-0674-400b-8252-365523e839c9"></div>
+<div id="88391ec0-8624-416e-9419-7a3c74eaa29f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#9703c26b-0674-400b-8252-365523e839c9');
+var element = $('#88391ec0-8624-416e-9419-7a3c74eaa29f');
 IPython.notebook.save_checkpoint();
 </script>
 </div>
@@ -13608,6 +13608,23 @@ IPython.notebook.save_checkpoint();
     <span class="n">df_rfmCh</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;long&#39;</span><span class="p">:</span> <span class="s1">&#39;Longevity&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">df_rfmCh</span>
+
+<span class="k">def</span> <span class="nf">main_rfm</span><span class="p">():</span>
+    <span class="c1"># - Recebe arquivo</span>
+    <span class="n">df_fato_compra</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;raw/fato_compras.csv&#39;</span><span class="p">)</span>
+    <span class="n">df_fato_compra</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># - Converte data_local para datetime</span>
+    <span class="n">df_fato_compra</span><span class="o">.</span><span class="n">data_local</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_fato_compra</span><span class="o">.</span><span class="n">data_local</span><span class="p">)</span>
+
+    <span class="c1"># - Filtra informação</span>
+    <span class="n">df_clean</span> <span class="o">=</span> <span class="n">df_fato_compra</span><span class="p">[</span><span class="n">df_fato_compra</span><span class="o">.</span><span class="n">situacao</span> <span class="o">==</span> <span class="s1">&#39;Confirmada&#39;</span><span class="p">]</span>
+
+    <span class="c1"># - Cria arquivo RFM Churn</span>
+    <span class="n">df_RFMCH</span> <span class="o">=</span> <span class="n">RFMChurn</span><span class="p">(</span><span class="n">df_clean</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">df_RFMCH</span>
+    
 </pre></div>
 
     </div>
@@ -13626,21 +13643,28 @@ IPython.notebook.save_checkpoint();
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nbi:hide_in</span>
 <span class="c1"># nbi:hide_out</span>
-<span class="c1"># - Recebe arquivo</span>
-<span class="n">df_fato_compra</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;raw/fato_compras.csv&#39;</span><span class="p">)</span>
-<span class="n">df_fato_compra</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># - Converte data_local para datetime</span>
-<span class="n">df_fato_compra</span><span class="o">.</span><span class="n">data_local</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_fato_compra</span><span class="o">.</span><span class="n">data_local</span><span class="p">)</span>
-
-<span class="c1"># - Filtra informação</span>
-<span class="n">df_clean</span> <span class="o">=</span> <span class="n">df_fato_compra</span><span class="p">[</span><span class="n">df_fato_compra</span><span class="o">.</span><span class="n">situacao</span> <span class="o">==</span> <span class="s1">&#39;Confirmada&#39;</span><span class="p">]</span>
-
-<span class="c1"># - Cria arquivo RFM Churn</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">RFMChurn</span><span class="p">(</span><span class="n">df_clean</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">main_rfm</span><span class="p">()</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\rodrigo.sarmento\AppData\Local\Continuum\anaconda2\envs\Python\lib\site-packages\IPython\core\interactiveshell.py:3249: DtypeWarning: Columns (14) have mixed types. Specify dtype option on import or set low_memory=False.
+  if (await self.run_code(code, result,  async_=asy)):
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
