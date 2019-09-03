@@ -13195,29 +13195,32 @@ div#notebook {
 
   
 
-  <div class="nbinteract-hide_in
+  <div class="nbinteract-hide_in nbinteract-hide_out
       cell border-box-sizing code_cell rendered">
     <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nbi:hide_in</span>
-<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;images/logo.png&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
-<span class="n">image</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="n">img_phoebus</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span>
-    <span class="n">value</span><span class="o">=</span><span class="n">image</span><span class="p">,</span>
-    <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span>
-    <span class="n">width</span><span class="o">=</span><span class="mi">140</span><span class="p">,</span>
-    <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="c1"># nbi:hide_out</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">file = open(&quot;images/logo.png&quot;, &quot;rb&quot;)</span>
+<span class="sd">image = file.read()</span>
+<span class="sd">img_phoebus = widgets.Image(</span>
+<span class="sd">    value=image,</span>
+<span class="sd">    format=&#39;png&#39;,</span>
+<span class="sd">    width=140,</span>
+<span class="sd">    height=300,</span>
+<span class="sd">)</span>
 
 
-<span class="n">cabecalho</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span>
-    <span class="n">value</span><span class="o">=</span><span class="s2">&quot;&lt;b&gt;Portfólio dos Parceiros&lt;/b&gt;&quot;</span><span class="p">,</span>
-    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;teste&#39;</span><span class="p">,</span>
-    <span class="c1">#description=&#39;Portfólio dos Parceiros&#39;,</span>
-<span class="p">)</span>
-<span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">img_phoebus</span><span class="p">,</span> <span class="n">cabecalho</span><span class="p">])</span>
+<span class="sd">cabecalho = widgets.HTML(</span>
+<span class="sd">    value=&quot;&lt;b&gt;Portfólio dos Parceiros&lt;/b&gt;&quot;,</span>
+<span class="sd">    placeholder=&#39;teste&#39;,</span>
+<span class="sd">    #description=&#39;Portfólio dos Parceiros&#39;,</span>
+<span class="sd">)</span>
+<span class="sd">widgets.VBox([img_phoebus, cabecalho])</span>
+<span class="sd">&#39;&#39;&#39;</span>
 </pre></div>
 
     </div>
@@ -13234,11 +13237,9 @@ div#notebook {
 
 
 
-  <div class="output_subarea output_widget_view ">
-    <button class="js-nbinteract-widget">
-      Loading widgets...
-    </button>
-  </div>
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;\nfile = open(&#34;images/logo.png&#34;, &#34;rb&#34;)\nimage = file.read()\nimg_phoebus = widgets.Image(\n    value=image,\n    format=\&#39;png\&#39;,\n    width=140,\n    height=300,\n)\n\n\ncabecalho = widgets.HTML(\n    value=&#34;&lt;b&gt;Portfólio dos Parceiros&lt;/b&gt;&#34;,\n    placeholder=\&#39;teste\&#39;,\n    #description=\&#39;Portfólio dos Parceiros\&#39;,\n)\nwidgets.VBox([img_phoebus, cabecalho])\n&#39;</pre>
+</div>
 
 </div>
 
