@@ -4,7 +4,7 @@ Essa é uma ferramenta simples para visualizações básicas de BI
 
 ## Introdução
 
-A ideia é a criação de uma webpage interatia advinda de notebooks Jupyter
+Página Web interativa, advinda de notebooks Jupyter, com visão geral da empresa, segmentação dos usuários e previsão
 
 ## Construído com
 
