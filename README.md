@@ -1,4 +1,4 @@
-# Portfolio - Visão inteligente para Parceiros
+# Portfolio - Visão Inteligente para Parceiros
 
 Essa é uma ferramenta simples para visualizações básicas de BI
 
