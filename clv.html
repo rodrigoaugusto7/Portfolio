@@ -13164,91 +13164,35 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nbi:hide_in</span>
 <span class="c1"># nbi:hide_out</span>
+
+<span class="c1"># - Biblioteca transformação do Notebook Jupyter em página HTML</span>
 <span class="kn">import</span> <span class="nn">nbinteract</span> <span class="k">as</span> <span class="nn">nbi</span>
 
 <span class="c1"># - Manipulação de arquivos</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">math</span>
-<span class="c1">#import pymc3 as pm</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in nbinteract-hide_out
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nbi:hide_in</span>
-<span class="c1"># nbi:hide_out</span>
 
 <span class="c1"># - Visualização</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">import</span> <span class="nn">squarify</span> 
-
-<span class="c1"># -- Matplotlib -- </span>
 <span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="k">import</span> <span class="n">figure</span>
-<span class="c1"># Observar datas em separado</span>
 <span class="kn">import</span> <span class="nn">matplotlib.dates</span> <span class="k">as</span> <span class="nn">dates</span>
-<span class="c1"># Posso utilizar matplotlib inline ou notebook</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
-</pre></div>
 
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in nbinteract-hide_out
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nbi:hide_in</span>
-<span class="c1"># nbi:hide_out</span>
-
+<span class="c1"># - CLV</span>
 <span class="kn">from</span> <span class="nn">lifetimes.utils</span> <span class="k">import</span> <span class="n">calibration_and_holdout_data</span>
 <span class="kn">from</span> <span class="nn">lifetimes.utils</span> <span class="k">import</span> <span class="n">summary_data_from_transaction_data</span>
 <span class="kn">from</span> <span class="nn">lifetimes</span> <span class="k">import</span> <span class="n">BetaGeoFitter</span>
 <span class="kn">from</span> <span class="nn">lifetimes</span> <span class="k">import</span> <span class="n">ModifiedBetaGeoFitter</span>
 
-<span class="c1"># - Plot</span>
+<span class="c1"># - CLV Plot</span>
 <span class="kn">from</span> <span class="nn">lifetimes.plotting</span> <span class="k">import</span> <span class="n">plot_history_alive</span>
 <span class="kn">from</span> <span class="nn">lifetimes.plotting</span> <span class="k">import</span> <span class="n">plot_period_transactions</span>
 <span class="kn">from</span> <span class="nn">lifetimes.plotting</span> <span class="k">import</span> <span class="n">plot_frequency_recency_matrix</span>
 <span class="kn">from</span> <span class="nn">lifetimes.plotting</span> <span class="k">import</span> <span class="n">plot_calibration_purchases_vs_holdout_purchases</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in nbinteract-hide_out
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nbi:hide_in</span>
-<span class="c1"># nbi:hide_out</span>
 
 <span class="c1"># - Widgets</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
@@ -13273,7 +13217,7 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nbi:hide_in</span>
 <span class="c1"># nbi:hide_out</span>
-<span class="c1"># - Modifica formato de todos os gráficos</span>
+<span class="c1"># - Modifica formato das visões</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">11.7</span><span class="p">,</span> <span class="mf">8.27</span><span class="p">)})</span>
 </pre></div>
 
@@ -13293,26 +13237,9 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nbi:hide_in</span>
 <span class="c1"># nbi:hide_out</span>
+
 <span class="c1"># - Arquivo com dados básicos de RFM, a recência aqui utilizada difere da recência aplicada no modelo BDNGB</span>
 <span class="n">df_rfmch</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;preprocessed/UserRFMCH.csv&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in nbinteract-hide_out
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nbi:hide_in</span>
-<span class="c1"># nbi:hide_out</span>
 <span class="c1"># - Arquivo com informação geral sobre cada compra</span>
 <span class="n">df_fato_compras</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;raw/fato_compras.csv&#39;</span><span class="p">)</span>
 </pre></div>
@@ -13366,6 +13293,25 @@ div#notebook {
 </div>
 
   </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Customer-Lifetime-Value">Customer Lifetime Value<a class="anchor-link" href="#Customer-Lifetime-Value">&#182;</a></h1><ul>
+<li>Objetivo<ul>
+<li>Observar, através da utilização básica de dados de compras, o padrão de consumo dos associados de um supermercado.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Os dados seguem o padrão:</strong></p>
+
+</div>
+</div>
+</div>
 
   
 
@@ -13376,7 +13322,7 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nbi:hide_in</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13421,6 +13367,26 @@ div#notebook {
       <td>10358</td>
       <td>2019-04-25</td>
     </tr>
+    <tr>
+      <th>1</th>
+      <td>6329</td>
+      <td>2019-04-02</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3583</td>
+      <td>2019-03-28</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3583</td>
+      <td>2019-03-28</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3583</td>
+      <td>2019-03-30</td>
+    </tr>
   </tbody>
 </table>
 </div>
@@ -13434,7 +13400,7 @@ div#notebook {
   </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Modelo-Lifetimes">Modelo Lifetimes<a class="anchor-link" href="#Modelo-Lifetimes">&#182;</a></h1>
+<h1 id="Modelo--BG-NBD-(Beta-Geometric-Negative-Binomial-Distribution)">Modelo  BG-NBD (Beta Geometric Negative Binomial Distribution)<a class="anchor-link" href="#Modelo--BG-NBD-(Beta-Geometric-Negative-Binomial-Distribution)">&#182;</a></h1><h2 id="Utilizando-a-biblioteca-Lifetimes">Utilizando a biblioteca Lifetimes<a class="anchor-link" href="#Utilizando-a-biblioteca-Lifetimes">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -14233,13 +14199,14 @@ Diferença entre o que aconteceu e o que foi previsto: 8646.17905056708
 
   
 
-  <div class="
+  <div class="nbinteract-hide_in
       cell border-box-sizing code_cell rendered">
     <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># - Transforma os dados para o formato utilizado pelo modelo</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nbi:hide_in</span>
+<span class="c1"># - Transforma os dados para o formato utilizado pelo modelo</span>
 <span class="n">summary</span> <span class="o">=</span> <span class="n">summary_data_from_transaction_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;associado_id&#39;</span><span class="p">,</span> <span class="s1">&#39;data_compra&#39;</span><span class="p">,</span> <span class="n">observation_period_end</span><span class="o">=</span><span class="s1">&#39;2019-7-4&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -14265,7 +14232,7 @@ Diferença entre o que aconteceu e o que foi previsto: 8646.17905056708
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nbi:hide_in</span>
-<span class="n">summary</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">summary</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14317,6 +14284,30 @@ Diferença entre o que aconteceu e o que foi previsto: 8646.17905056708
       <td>23.0</td>
       <td>105.0</td>
       <td>112.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>9.0</td>
+      <td>102.0</td>
+      <td>108.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>31.0</td>
+      <td>152.0</td>
+      <td>161.0</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>8.0</td>
+      <td>142.0</td>
+      <td>162.0</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>45.0</td>
     </tr>
   </tbody>
 </table>
@@ -14385,22 +14376,6 @@ Diferença entre o que aconteceu e o que foi previsto: 8646.17905056708
 </div>
 
   </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Comparação com o modelo holdout utilizado anteriormente</strong></p>
-<ul>
-<li>Optimization terminated successfully.
-<pre><code>   Current function value: -9.150911
-   Iterations: 40
-   Function evaluations: 43
-   Gradient evaluations: 43
-</code></pre>
-&lt;lifetimes.ModifiedBetaGeoFitter: fitted with 56716 subjects, a: 0.01, alpha: 7.80, b: 0.14, r: 0.56&gt;</li>
-</ul>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Previs&#227;o-de-Frequ&#234;ncia-de-Compras">Previs&#227;o de Frequ&#234;ncia de Compras<a class="anchor-link" href="#Previs&#227;o-de-Frequ&#234;ncia-de-Compras">&#182;</a></h2>
@@ -14772,7 +14747,7 @@ Name: p_alive, dtype: float64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x116dfafc550&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x14159f9d550&gt;</pre>
 </div>
 
 </div>
@@ -14871,23 +14846,8 @@ Name: p_alive, dtype: float64</pre>
 
 <span class="c1"># - Cria box que contém os dois. Mostrar o botão e o output juntos</span>
 <span class="n">box_distri</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">menu_distri</span><span class="p">,</span> <span class="n">menu_rfm</span><span class="p">,</span> <span class="n">button_distri</span><span class="p">,</span> <span class="n">out_distri</span><span class="p">])</span>
-</pre></div>
 
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="nbinteract-hide_in
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nbi:hide_in</span>
+<span class="c1"># - Chama o box do menu completo</span>
 <span class="n">box_distri</span>
 </pre></div>
 
